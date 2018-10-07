@@ -49,7 +49,7 @@ p.italic {
 
 /* content of the game */
 
-section.game {
+section.gameContent {
     margin: 0 auto;
     margin-top: 2em;
     width: 100%;
@@ -62,7 +62,7 @@ section.game {
 	opacity: 0.9;
 }
 
-p.guess {
+p.guessLines {
 	text-align: center;
 	font-weight: 900;
 }
