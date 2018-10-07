@@ -28,6 +28,9 @@ h1, #logo {
     border-bottom: 3px solid #000;
 }
 
+
+/* directions to play game */
+
 article.directions {
     margin: 0 auto;
     width: 100%;
@@ -44,7 +47,9 @@ p.italic {
     font-style: italic;
 }
 
-section.content {
+/* content of the game */
+
+section.game {
     margin: 0 auto;
     margin-top: 2em;
     width: 100%;
@@ -55,4 +60,9 @@ section.content {
     color: #000;
 	border: .2em solid #4aaaa5;
 	opacity: 0.9;
+}
+
+p.guess {
+	text-align: center;
+	font-weight: 900;
 }
