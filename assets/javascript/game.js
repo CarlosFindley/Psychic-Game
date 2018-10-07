@@ -1,21 +1,22 @@
-//Letter choices available
+// Letter choices available
 var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-//Creating variables and setting them to zero
+// Creating variables and setting them to zero
 let wins = 0;
 let losses = 0;
 let guessesLeft = 7;
 let guessedLetters = [];
 
-//Lets the computer select a random letter from the available choices
+// Lets the computer select a random letter from the available choices
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-//Allows the user 7 guesses
+// Captures how many guesses are left
 function updateGuessesLeft() {
-    // Here we are grabbing the HTML element and setting it equal to the guessesLeft. (i.e. guessesLeft will get displayed in HTML)
+    // Dig into DOM node tree and grab guessesLeft to output guesses left
     document.querySelector(".guessLeft").innerHTML = "Guesses left: " + guessesLeft;
 };
 
+// 
 function updateLetterToGuess() {
     this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
 };
@@ -58,14 +59,14 @@ document.onkeyup = function(event) {
                 wins++;
                 document.querySelector("wins").innerHTML = "Wins: " + wins;
                 userGuess = userGuess.toUpperCase();
-                alert("Yes, you are psychic! Mantis has chosen " + userGuess);
+                alert("You are LUCKY! Are you a psychic?" + userGuess);
                 reset();
             }
         } else if (guessesLeft == 0) {
             // Then we will loss and we'll update the html to display the loss 
             losses++;
             document.querySelector(".losses").innerHTML = "Losses: " + losses;
-            alert("Sorry, you're not psychic, maybe try again?");
+            alert("How UNFORTUNATE!");
             // Then we'll call the reset. 
             reset();
         }
