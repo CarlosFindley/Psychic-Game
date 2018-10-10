@@ -4,14 +4,14 @@ var arrayOfLetters = ["a", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 // Setting score defaults
 var wins = 0;
 var losses = 0;
-var guessesLeft = 7;
-var guessSoFar = [];
+var guessesLeft = 14;
+var guessedSoFar = [];
 
 // Create variables that hold references to the places in the HTML where we want to display things.
 document.querySelector(".wins").innerHTML = "Wins: " + wins;
 document.querySelector(".losses").innerHTML = "Losses: " + losses;
 document.querySelector(".guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
-document.querySelector(".guessSoFar").innerHTML = "Your Guesses so far: " + guessSoFar;
+document.querySelector(".guessedSoFar").innerHTML = "Your Guesses so far: " + guessedSoFar;
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -22,19 +22,42 @@ document.onkeyup = function(event) {
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = arrayOfLetters[Math.floor(Math.random() * arrayOfLetters.length)];
 
+    var reset = function() {
+        guessesLeft = 14;
+        guessedSoFar = [];
+    }
+
         // I user guess and computer guess match
         if (userGuess === computerGuess) {
             wins++;
-            // wins.textContent = "Wins: " + wins;
+            alert("Terrific!  Are you a psychic?");
+            reset();
         } else if (userGuess !== computerGuess) {
-            losses++;
-            
+            guessesLeft--;
         }
+
+        if (guessesLeft <= 0) {
+            losses++;
+            alert("Not quite! The computer chose " + "\"" + computerGuess + ".\"" + " Try again.");
+            reset();
+        }
+
+        if (wins >= 7) {
+            alert("You are a PSYCHIC!");
+            // document.querySelector()
+        } else if (losses >= 7) {
+            alert("How unfortunate, you are a PSYCHIC!");
+        }
+
+
+
+        guessedSoFar.push(userGuess);
+
 
         document.querySelector(".wins").innerHTML = "Wins: " + wins;
         document.querySelector(".losses").innerHTML = "Losses: " + losses;
         document.querySelector(".guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
-        document.querySelector(".guessSoFar").innerHTML = "Your Guesses so far: " + guessSoFar;
+        document.querySelector(".guessedSoFar").innerHTML = "Your Guesses so far: " + guessedSoFar.join(', ');
 
 
   };
