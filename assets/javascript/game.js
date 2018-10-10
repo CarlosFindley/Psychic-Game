@@ -59,5 +59,6 @@ document.onkeyup = function(event) {
         document.querySelector(".guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
         document.querySelector(".guessedSoFar").innerHTML = "Your Guesses so far: " + guessedSoFar.join(', ');
 
-
   };
+
+  // Also wanted to accomplish ending the game and changing the background
