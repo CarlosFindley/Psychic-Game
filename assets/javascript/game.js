@@ -46,7 +46,7 @@ document.onkeyup = function(event) {
             alert("You are a PSYCHIC!");
             // document.querySelector()
         } else if (losses >= 7) {
-            alert("How unfortunate, you are a PSYCHIC!");
+            alert("How unfortunate, you are not a PSYCHIC!");
         }
 
 
