@@ -1,9 +1,16 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: "Times New Roman", Times, serif
     font-size: 1em;
     color: #fff;
     background-image: url(../images/alphabet.jpg); /* image from PEXELS https://www.pexels.com/photo/alphabet-close-up-communication-conceptual-278887/ */
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 * {
